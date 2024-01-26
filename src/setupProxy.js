@@ -22,4 +22,11 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    '/books/...',
+    createProxyMiddleware({
+      target: 'http://localhost:8088',  // 실제 서버 주소
+      changeOrigin: true,
+    })
+  );
 };
