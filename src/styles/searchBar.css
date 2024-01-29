@@ -1,0 +1,97 @@
+.searchSection {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto 0 auto;
+    height: 3rem;
+    box-shadow:0 2px 8px 1px rgba(64,60,67,.24);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.searchBar {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    font-size: 1rem;
+}
+
+.searchImgBox {
+    height: 100%;
+    cursor: pointer;
+}
+
+.searchImg {
+    height: calc(100% - 1.4rem);
+    padding: 0.7rem;
+}
+
+.bookList {
+    width: 84%;
+    margin: 2rem auto 10rem auto;
+    border: 1px solid #E8E8E8;
+    padding: 3rem;
+    box-shadow:0 2px 8px 5px rgba(64,60,67,.24);
+}
+
+h1 {
+    text-align: left;
+    margin: 0 0 1rem 0;
+}
+
+table {
+    min-width: 100%;
+    border-collapse: collapse; /* 테이블 셀의 경계를 합칩니다. */
+}
+
+tr {
+    height: 3rem;
+}
+
+td, th {
+    border: 2px solid #E8E8E8; /* 모든 셀에 테두리를 설정합니다. */
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.no {
+    width: 10%;
+}
+
+.title {
+    width: 50%;
+}
+
+.author {
+    width: 20%;
+}
+
+.publisher {
+    width: 10%;
+}
+
+.publisher {
+    width: 10%;
+}
+
+.editButton {
+    width: 10%;
+}
+
+.editButton button {
+    background-color: #FBB6B7;
+    border: none;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: .9rem;
+    color: #805658;
+}
+
+::-webkit-scrollbar {
+    background-color: #E8E8E8;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FBB6B7;
+    border-radius: 7px;
+}
