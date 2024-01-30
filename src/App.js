@@ -17,8 +17,8 @@ function App() {
   
   return (
     <div className="App">
-      <Header/>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/admin/book" element={<AdminMain />}></Route>
@@ -28,8 +28,8 @@ function App() {
           <Route path="/detail/read" element={<BookReadPage />} />
           <Route path="/myPage" element={<MyPage />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
-      <Footer/>
     </div>
   );
 }

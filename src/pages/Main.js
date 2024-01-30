@@ -18,7 +18,7 @@ function Main() {
         <main>
         <section className='popularBooks'>
           <h1>소설 인기 도서</h1>
-          <ul className='bookList'>
+          <ul className='mainBookList'>
               {books.map(book => (
                 <Book imgSrc={book.imagePath} title={book.title} author={book.author} />
               ))}
@@ -26,7 +26,7 @@ function Main() {
         </section>
         <section className='popularBooks'>
           <h1>추리 스릴러</h1>
-          <ul className='bookList'>
+          <ul className='mainBookList'>
               {books.map(book => (
                 <Book imgSrc={book.imagePath} title={book.title} author={book.author} />
               ))}
