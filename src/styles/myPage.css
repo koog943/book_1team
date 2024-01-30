@@ -1,0 +1,230 @@
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Thin";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Black";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+}
+
+* {
+    box-sizing: content-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    /* 인터넷 익스플로러 */
+    scrollbar-width: none;
+    /* 파이어폭스 */
+
+    font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main,
+div,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:visited,
+a:active {
+    /* 상속된 색상 사용 */
+    color: inherit;
+    /* 밑줄 제거 */
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+}
+
+/* ---------------------------------------- 메인 ---------------------------------------- */
+.title3{
+    position: relative;
+    display: flex;
+    
+    width: 80vw;
+    
+    margin-top: 15vh ;
+    
+    font-size: 2.5rem;
+	font-family: "Pretendard-SemiBold";
+}
+.main3{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+    align-items: center;
+    
+    width: 80vw;
+    
+    margin-top: 3vh;
+    padding: 1%;
+    border: 0.2rem solid #E4E4E4;
+    
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+}
+.main3Top{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 80%;
+    height: 10vh;
+}
+.nickname{
+    position: relative;
+    
+    font-size: 1.5rem;
+	font-family: "Pretendard-SemiBold";
+}
+.subscribeBtn{
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    height: 50%;
+    width: 15%;
+    
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 7px;
+    
+    background-color: #FBB6B7;
+    font-size: 1.5rem;
+	font-family: "Pretendard-ExtraBold";
+    
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+/* ---------------------------------------- 메인중간 ---------------------------------------- */
+.main3Middle{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 80%;
+    height: 15vh;
+    
+    border: 0.2rem solid #E4E4E4;
+    
+    color: #767676;
+    font-size: 2rem;
+	font-family: "Pretendard-Medium";
+}
+.currentMoney{
+    color: black;
+    font-family: "Pretendard-Bold";
+}
+
+/* ---------------------------------------- 메인하단 ---------------------------------------- */
+.main3Bottom{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    width: 80%;
+    height: 40vh;
+    
+    margin-top: 5vh;
+
+    font-size: 2rem;
+	font-family: "Pretendard-Medium";
+}
+.main3BottomTitle{
+    padding: 1vh 0;
+    text-align: left;
+}
+.bookCover{
+    width: 200px;
+    height: 300px;   
+    
+    margin-right: 1vw;
+}

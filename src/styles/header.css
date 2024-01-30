@@ -1,0 +1,163 @@
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Thin";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Black";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+}
+
+* {
+    box-sizing: content-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    /* 인터넷 익스플로러 */
+    scrollbar-width: none;
+    /* 파이어폭스 */
+
+    font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main,
+div,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:visited,
+a:active {
+    /* 상속된 색상 사용 */
+    color: inherit;
+    /* 밑줄 제거 */
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 5vh;
+    
+    padding: 1rem 2vw;
+    border-bottom: 0.2rem solid #E4E4E4;
+    
+    z-index: 9999;
+}
+.navLeft{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.myPage {
+    position: relative;
+    display: flex;
+    
+    text-align: center;
+    align-items: center;
+    
+    margin-left: 3vw;
+    
+    font-size: 2rem;
+	font-family: "Pretendard-Medium";
+}
+.signUpBtn{
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    width: 5vw;
+    height: 3vh;
+    
+    margin-left: 70vw;
+    
+    border: 0.2rem solid #E4E4E4;
+    border-radius: 5px;
+    
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1rem;
+	font-family: "Pretendard-Regular";
+}
+.signOutBtn{
+    color: #FFFFFF;
+    background-color: #333333;
+    border-color: #333333;
+}
