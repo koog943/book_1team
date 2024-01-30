@@ -3,37 +3,27 @@ import React, { useState, useEffect } from 'react';
 import Book from './components/Book';
 import dummyBookData from './constants/dummyBookData'
 import './App.css';
-import fetchBooks from './services/fetchBooks';
-// App 컴포넌트 선언
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Main from './pages/Main';
+import AdminMain from './pages/AdminMain';
+import CreateBook from './pages/CreateBook';
+import UpdateBook from './pages/UpdateBook';
+
 function App() {
-  //const [books, setBooks] = useState([]);
-
-  // useEffect(() => {
-  //   // 컴포넌트가 마운트될 때 데이터를 가져옴
-  //   fetchBooks();
-  // }, []);
-
-  const [books, setBooks] = useState(dummyBookData); // TODO: 서버에서 받아오는 걸로 바꿔야함
-
-  return (
-    <main>
-      <section className='popularBooks'>
-        <h1>소설 인기 도서</h1>
-        <ul className='bookList'>
-            {books.map(book => (
-              <Book imgSrc={book.imagePath} title={book.title} author={book.author} />
-            ))}
-        </ul>
-      </section>
-      <section className='popularBooks'>
-        <h1>추리 스릴러</h1>
-        <ul className='bookList'>
-            {books.map(book => (
-              <Book imgSrc={book.imagePath} title={book.title} author={book.author} />
-            ))}
-        </ul>
-      </section>      
-    </main>
+    <div className="App">
+      <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/admin/book" element={<AdminMain />}></Route>
+          <Route path="/admin/book/new" element={<CreateBook />}></Route>
+          <Route path="/admin/book/update" element={<UpdateBook />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer/>
+    </div>
   );
 }
 
