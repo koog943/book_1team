@@ -79,6 +79,10 @@ td, th {
 }
 
 .editButton button {
+    cursor: pointer;
+}
+
+.editButton button {
     background-color: #FBB6B7;
     border: none;
     padding: 0.4rem 1rem 0.4rem 1rem;
@@ -94,4 +98,9 @@ td, th {
 ::-webkit-scrollbar-thumb {
     background-color: #FBB6B7;
     border-radius: 7px;
+}
+
+.plus {
+    height: 2rem;
+    cursor: pointer;
 }

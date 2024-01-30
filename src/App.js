@@ -5,7 +5,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './pages/Main';
 import AdminMain from './pages/AdminMain';
-import AdminBook from './pages/AdminBook';
+import CreateBook from './pages/CreateBook';
+import UpdateBook from './pages/UpdateBook';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/book/list/admin" element={<AdminMain />}></Route>
-          <Route path="/book/admin" element={<AdminBook />}></Route>
+          <Route path="/admin/book" element={<AdminMain />}></Route>
+          <Route path="/admin/book/new" element={<CreateBook />}></Route>
+          <Route path="/admin/book/update" element={<UpdateBook />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer/>
