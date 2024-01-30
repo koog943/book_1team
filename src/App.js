@@ -1,8 +1,4 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
-import Book from './components/Book';
-import dummyBookData from './constants/dummyBookData'
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,6 +8,7 @@ import CreateBook from './pages/CreateBook';
 import UpdateBook from './pages/UpdateBook';
 
 function App() {
+  return (
     <div className="App">
       <Header/>
       <BrowserRouter>
