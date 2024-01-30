@@ -1,0 +1,23 @@
+.book {
+    padding: .5rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    max-width: 10vw; /* 책 컴포넌트의 최대 너비를 지정 */
+    text-align: left;
+    min-width: 10vw;
+}
+
+.book img {
+    width: 100%; /* 이미지를 부모 요소의 너비에 맞게 조정 */
+    height: auto;
+}
+
+.book h2 {
+    font-size: 1em; /* 상대적인 글꼴 크기 */
+}
+
+.book p {
+    font-size: 1em; /* 상대적인 글꼴 크기 */
+    color: #666;
+    margin: 0%;
+}
