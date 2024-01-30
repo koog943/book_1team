@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.bookList {
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE 및 Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.popularBooks {
+  border-bottom: 1px solid #D3D3D3;
+}
