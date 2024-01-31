@@ -32,7 +32,7 @@ const BookDetailPage = () => {
                                 지은이
                                 <div className='authorTxt content2'>매튜 볼</div>
                             </div>
-                            <div className='publisher content1'>
+                            <div className='content1'>
                                 출판사
                                 <div className='publisherTxt content2'>다산 북스</div>
                             </div>
