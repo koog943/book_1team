@@ -12,6 +12,7 @@ const MyPage = () => {
     const [userData, setUserData] = useState({
         userName: '이름3',
         userMoney: 9900,
+        userAuthority: 1,
         userSubscribeStatus: false,
         userLikeBookList : {
             bookId : [1, 3, 6, 10]
