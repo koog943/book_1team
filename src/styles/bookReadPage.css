@@ -151,16 +151,30 @@ button {
 }
 .bookLeft{
     position: relative;
+    display: flex;
+    
+    /* justify-content: center;
+    align-items: center; */
     
     width: 45%;
     
     padding: 3%;
     border-right: 0.2rem solid #E4E4E4;
+    
+    font-size: 2rem;
+	font-family: "Pretendard-SemiBold";
 }
 .bookRight{
     position: relative;
+    display: flex;
+    
+    /* justify-content: center;
+    align-items: center; */
     
     width: 45%;
     
     padding: 3%;
+    
+    font-size: 2rem;
+	font-family: "Pretendard-SemiBold";
 }

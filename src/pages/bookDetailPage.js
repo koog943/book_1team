@@ -42,10 +42,6 @@ const BookDetailPage = () => {
                                 <img className ='likeImg' src={like ? likeImg : unlikeImg} alt='noImage'/>
                                 My Favforite
                             </button>
-                            <button className='reviewBtn' href='#review'>
-                                <img className ='reviewImg' src={reviewImg} alt='noImage'/>
-                                한 줄 리뷰
-                            </button>
                             <Link to="/detail/read" className='readBtn'>
                                 바로읽기
                             </Link>
@@ -54,15 +50,11 @@ const BookDetailPage = () => {
                 </div>
                 <div className='title2'>
                     <div className='bookContentTitle'>목차</div>
-                    <div className='bookIndex'></div>
+                    <div className='bookIndex'>아아아아</div>
                 </div>
                 <div className='title2'>
                     <div className='bookContentTitle'>책 소개</div>
-                    <div className='bookIntro'></div>
-                </div>
-                <div className='title2'>
-                <div className='bookContentTitle'>한 줄 리뷰</div>
-                    <div className='bookReview'></div>
+                    <div className='bookIntro'>가나다라마</div>
                 </div>
             </div>
             
