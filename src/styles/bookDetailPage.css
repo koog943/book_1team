@@ -197,6 +197,7 @@ button {
     display: flex;
     flex-direction: column;
     
+    justify-content: space-between;
     
     width: 30%;
     height: 100%;
@@ -222,27 +223,7 @@ button {
 .likeImg{
     margin-right: 1vw;
 }
-.reviewBtn{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: center;
-    align-items: center;
-    
-    height: 20%;
-    
-    border: 0.2rem solid #E4E4E4;
-    border-top: none;
-    border-right: none;
-    
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 1.5rem;
-	font-family: "Pretendard-SemiBold";
-}
-.reviewImg{
-    margin-right: 1vw;
-}
+
 .readBtn{
     position: relative;
     display: flex;
@@ -250,11 +231,11 @@ button {
     justify-content: center;
     align-items: center;
     
-    height: 10%;
-    width: 55%;
+    height: 15%;
+    width: 60%;
     
-    margin-top: 55%;
     margin-left: 20%;
+    margin-bottom: 10%;
     border-color: rgba(0, 0, 0, 0);
     border-radius: 7px;
     
@@ -288,7 +269,7 @@ button {
     position: relative;
     display: flex;
     flex-direction: row;
-        
+  
     height: 100%;
     
     border: 0.2rem solid #E4E4E4;
@@ -302,9 +283,6 @@ button {
     position: relative;
     display: flex;
     flex-direction: row;
-    
-    justify-content: center;
-    align-items: center;
     
     height: 100%;
     

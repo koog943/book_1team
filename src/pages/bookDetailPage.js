@@ -54,10 +54,6 @@ const BookDetailPage = () => {
                                 <img className ='likeImg' src={like ? likeImg : unlikeImg} alt='noImage'/>
                                 My Favforite
                             </button>
-                            <button className='reviewBtn' href='#review'>
-                                <img className ='reviewImg' src={reviewImg} alt='noImage'/>
-                                한 줄 리뷰
-                            </button>
                             <Link to="/detail/read" className='readBtn'>
                                 바로읽기
                             </Link>
