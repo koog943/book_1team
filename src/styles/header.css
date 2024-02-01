@@ -134,7 +134,8 @@ button {
     
     margin-left: 3vw;
     
-    font-size: 2rem;
+    width: 4rem;
+    font-size: 1.5rem;
 	font-family: "Pretendard-Medium";
 }
 .signUpBtn{
@@ -158,6 +159,22 @@ button {
 }
 .signOutBtn{
     color: #FFFFFF;
+
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    width: 5vw;
+    height: 3vh;
+    
+    margin-left: 70vw;
+    
+    border: 0.2rem solid #333333;
+    border-radius: 5px;
+    
     background-color: #333333;
-    border-color: #333333;
+    font-size: 1rem;
+	font-family: "Pretendard-Regular";
 }

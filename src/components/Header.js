@@ -1,27 +1,49 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/header.css';
 import { Link} from 'react-router-dom';
 
 import logo from '../assets/logo.svg';
 
 function Header() {
-    
-    // 로그인/로그아웃 상태를 관리하는 상태 변수
-    const [signUp, setSignUp] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // 로그인/로그아웃 상태 변경 함수
-    const handleLoginChange = () => {
-        // signUp 값이 true일 때 외부 URL로 이동
-        if (signUp) {
-            window.location.href = 'http://35.244.15.13:8080/test/login'; // 대상 외부 URL로 수정
-        } else {
-            // 로그아웃 로직 또는 다른 동작 수행
-            // 여기에서는 로그아웃 로직은 제공되지 않았으므로 예시로 콘솔 로그를 출력
-            console.log('로그아웃 로직 수행');
+    const login = () => {
+        window.location.href = 'http://localhost:8088/book/login'; // 대상 외부 URL로 수정
+        setIsLoggedIn(true);
+    }
+
+    const logout = () => {
+        document.cookie = "Login_Check=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        setIsLoggedIn(false);
+        window.location.reload();
+    }
+
+    useEffect(() => {
+        setIsLoggedIn(isLogin)
+    }, []);
+
+    const isLogin = () => {
+        // 쿠키 이름을 찾기 위해 ';'로 분리
+        var cookies = document.cookie.split(';');
+        // 각 쿠키에 대해 반복
+        for(var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            // 공백 제거
+            while (cookie.charAt(0) == ' ') {
+                cookie = cookie.substring(1);
+            }
+            // 쿠키 이름과 값을 분리
+            var cookieName = cookie.split('=')[0];
+            var cookieValue = cookie.split('=')[1];
+            // 쿠키 이름이 주어진 이름과 같으면 true 반환
+            if (cookieName === "Login_Check") {
+                return true;
+            }
         }
-        // 상태 값 변경
-        setSignUp(!signUp);
-    };
+
+        // 쿠키 이름을 찾지 못했을 때 false 반환
+        return false;
+    }
     
     return(
         <div className='nav'>
@@ -32,12 +54,15 @@ function Header() {
                 <div className='myPage'>
                     <Link to="/myPage">내서재</Link>
                 </div>
+                {isLoggedIn ? (
+                    <div className='myPage'><Link to="/admin/book">책관리</Link></div>
+                ) : ('')}
             </div>
-            <button 
-                className={`signUpBtn ${!signUp && 'signOutBtn'}`}
-                onClick={handleLoginChange}>
-                {signUp ? '로그인' : '로그아웃'}
-            </button>
+            {isLoggedIn ? (
+                    <button className='signOutBtn' onClick={logout}>로그아웃</button>
+                ) : (
+                    <button className='signUpBtn' onClick={login}>로그인</button>
+                )}
         </div>
     );
 }
