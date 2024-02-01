@@ -13,7 +13,7 @@ function Header() {
     const handleLoginChange = () => {
         // signUp 값이 true일 때 외부 URL로 이동
         if (signUp) {
-            window.location.href = '35.244.15.13:8080/book/list'; // 대상 외부 URL로 수정
+            window.location.href = 'http://35.244.15.13:8080/test/login'; // 대상 외부 URL로 수정
         } else {
             // 로그아웃 로직 또는 다른 동작 수행
             // 여기에서는 로그아웃 로직은 제공되지 않았으므로 예시로 콘솔 로그를 출력

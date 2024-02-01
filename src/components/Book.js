@@ -5,7 +5,7 @@ import '../styles/Book.css'; // Book 컴포넌트의 CSS 파일을 import
 function Book(props) {
     return (
         <div className='bookProduct'>
-            <img src={props.imgSrc} alt='img'></img>
+            <img src={encodeURI(props.imgSrc)} alt='img'></img>
             <h2>{props.title}</h2>
             <p>{props.author}</p>
         </div>
