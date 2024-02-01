@@ -1,30 +1,25 @@
 import '../styles/adminMain.css';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function AdminMain() {    
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState('');
+    const [books, setBooks] = useState([]);
 
-    const book = {
-        "title":"참을 수 없는 존재의 가벼움",
-        "author":"밀란 쿤데라",
-        "publisher":"민음사",
-        "index":"아자아자차카",
-        "content":"가나다라"
-    }
+    useEffect(() => {
+        const storedBooks = localStorage.getItem('dummyBooks');
+          
+        if (storedBooks) {
+            const parsedBooks = JSON.parse(storedBooks);
+            setBooks(parsedBooks);
+        }
+    }, []);
 
-    const goToUpdate = async (bookId) => {
+    const goToUpdate = async (id, title, author, publisher, index, introducing, imagePath) => {
+
         try {
-            // // 서버에서 책 데이터 가져오기
-            // const response = await fetch(`http://localhost/getBook/${bookId}`);
-            // if (!response.ok) {
-            //     throw new Error('Network response was not ok');
-            // }
-            // const bookData = await response.json();
-
-            // // updateBook 컴포넌트로 책 데이터 전달
-            navigate("/admin/book/update", { state: { book } });
+            navigate("/admin/book/update", { state: { bookId: id, title:title, author:author, publisher:publisher, index:index, introducing:introducing, imagePath:imagePath} });
         } catch (error) {
             console.error('Error getting book data:', error);
         }
@@ -81,109 +76,22 @@ function AdminMain() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className='no'>1</td>
-                            <td className='title'>참을 수 없는 존재의 가벼움</td>
-                            <td className='author'>밀란 쿤데라</td>
-                            <td className='publisher'>민음사</td>
-                            <td className='editButton'>
-                                <button onClick={goToUpdate}>편집하기</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'>2</td>
-                            <td className='title'>인간실격</td>
-                            <td className='author'>다자이 오사무</td>
-                            <td className='publisher'>민음사</td>
-                            <td className='editButton'>
-                            <button onClick={goToUpdate}>편집하기</button>
-                            </td>
-                        </tr>
+                        {books.map((book, index) => (
+                            <tr key={index}>
+                                <td className='no'>{index + 1}</td>
+                                <td className='title'>{book.title}</td>
+                                <td className='author'>{book.author}</td>
+                                <td className='publisher'>{book.publisher}</td>
+                                <td className='editButton'>
+                                <button onClick={() => goToUpdate(index, book.title, book.author, book.publisher, book.index, book.introducing, book.imagePath)}>편집하기</button>
+                                </td>
+                            </tr>
+                        ))}
                         <tr>
                             <td className='no'></td>
                             <td className='title'>
                                 <img className='plus' src='/img/plus-sign.png' alt="plus" onClick={goToCreate}></img>
                             </td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
-                            <td className='author'></td>
-                            <td className='publisher'></td>
-                            <td className='editButton'>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className='no'></td>
-                            <td className='title'></td>
                             <td className='author'></td>
                             <td className='publisher'></td>
                             <td className='editButton'>

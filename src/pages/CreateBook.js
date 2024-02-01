@@ -1,11 +1,15 @@
 import React, { useState, useRef } from 'react';
 import '../styles/adminBook.css';
+import { useNavigate } from "react-router-dom";
 
 function AdminBook() {
+    const navigate = useNavigate();
+
     const [selectedFile, setSelectedFile] = useState(null);
     const [selectedTxtFile, setSelectedTxtFile] = useState(null);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
+    const [imagePath, setImagePath] = useState('');
     const [publisher, setPublisher] = useState('');
     const [tableOfContents, setTableOfContents] = useState('');
     const [introduction, setIntroduction] = useState('');
@@ -21,36 +25,33 @@ function AdminBook() {
 
     const handleUpload = async () => {
         if (selectedFile && selectedTxtFile && title && author && publisher && tableOfContents && introduction) {
-            console.log(selectedFile);
-            console.log(selectedTxtFile);
-            console.log(title);
-            console.log(author);
-            console.log(publisher);
-            console.log(tableOfContents);
-            console.log(introduction);
+            const storedBooks = localStorage.getItem('dummyBooks');
+            const parsedBooks = JSON.parse(storedBooks);
 
-            const formData = new FormData();
-            formData.append('image', selectedFile);
-            formData.append('txtFile', selectedTxtFile);
-            formData.append('title', title);
-            formData.append('author', author);
-            formData.append('publisher', publisher);
-            formData.append('contents', tableOfContents);
-            formData.append('introduction', introduction);
+            const tmp = {
+                "차라투스트라는 이렇게 말했다":"/bookImages/차라투스트라는이렇게말했다.jpg",
+                "바른마음":"/bookImages/바른마음.jpg",
+                "만들어진 신":"/bookImages/만들어진신.jpg"
+            }
 
-            // 이제 formData를 서버로 보내는 로직을 작성합니다.
-            // 예를 들어 fetch를 사용하여 POST 요청을 보낼 수 있습니다.
-            await fetch('/upload', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Upload successful:', data);
-            })
-            .catch(error => {
-                console.error('Error uploading:', error);
-            });
+            const newBook = {
+                bookId: parsedBooks.length + 1,
+                title: title,
+                author: author,
+                publisher: publisher,
+                index: tableOfContents,
+                introducing: introduction,
+                imagePath:tmp[title]
+            }
+
+            // dummyBooks.js를 업데이트하기 위해 새로운 책 데이터를 추가
+            parsedBooks.push(newBook);
+            localStorage.setItem('dummyBooks', JSON.stringify(parsedBooks));
+
+            console.log('New book added:', newBook);
+            console.log('Updated dummyBooks:', parsedBooks);
+
+            navigate("/admin/book");
         } else {
             console.log("Please fill in all fields and select all files.");
         }

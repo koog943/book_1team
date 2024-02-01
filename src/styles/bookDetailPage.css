@@ -276,7 +276,7 @@ button {
     text-align: left;
     
     width: 100%;
-    height: 40vh;
+    min-height: 40vh;
     
     font-size: 1.5rem;
 	font-family: "Pretendard-Bold";
@@ -288,10 +288,7 @@ button {
     position: relative;
     display: flex;
     flex-direction: row;
-    
-    justify-content: center;
-    align-items: center;
-    
+        
     height: 100%;
     
     border: 0.2rem solid #E4E4E4;
